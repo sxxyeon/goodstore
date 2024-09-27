@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+body {
+  
+}
+
+/* 스크롤 바 없애기 */
+.no-scrollbar {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Safari and Chrome */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* swiper custom */
+
+.custom-prev svg{opacity: .6; width: 80px; height: 80px; top: 50%; transform: translateY(-50%); left:-20px;}
+.custom-next svg{opacity: .6; width: 80px; height: 80px; top: 50%; transform: translateY(-50%); right:-20px;}
+.swiper-pagination{align-items: center;}
+.swiper-pagination .swiper-pagination-bullet{width: 12px; height:12px;}
+.swiper-pagination-bullet-active {
+  border: 1px solid #000 !important;
+  background-color: #fff !important;
+}
+@media screen and (max-width:768px){
+  .custom-prev{display: none !important;}
+  .custom-next{display: none !important;}
+  .swiper-pagination{display: none !important; bottom: 0 !important;}
+}
