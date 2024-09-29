@@ -27,7 +27,7 @@ const CartProductItem: React.FC<ProductItemProps> = ({
   const router = useRouter();
 
   return (
-    <section className="relative lg:px-5 lg:py-5 px-3 py-2 rounded-lg bg-white shadow-neutral-200 shadow-[0_1px_4px_3px_rgba(0,0,0,.1)]">
+    <section className="relative lg:px-5 lg:py-5 px-3 py-3 rounded-lg bg-white shadow-neutral-200 shadow-[0_1px_4px_3px_rgba(0,0,0,.1)]">
       <input
         type="checkbox"
         id={`${id}`}
@@ -51,14 +51,14 @@ const CartProductItem: React.FC<ProductItemProps> = ({
           </div>
 
           <div className="flex-1 ml-5">
-            <p className="text-xs text-gray-500">{provider}</p>
-            <p className="w-[90px] sm:text-sm font-semibold overflow-hidden whitespace-nowrap text-ellipsis xs:w-full">
+            <p className="text-xs sm:text-sm text-gray-500">{provider}</p>
+            <p className="w-[90px] text-sm sm:text-base font-semibold overflow-hidden whitespace-nowrap text-ellipsis xs:w-full">
               {name}
             </p>
-            <p className="font-semibold sm:text-sm">
+            <p className="font-semibold text-sm sm:text-base">
               {ConvertPrice(price * quantity)}원
             </p>
-            <p className="text-xs text-gray-400">무료배송</p>
+            <p className="text-xs sm:text-sm text-gray-400">무료배송</p>
           </div>
         </div>
 
@@ -83,7 +83,7 @@ const CartProductItem: React.FC<ProductItemProps> = ({
           />
         </div>
 
-        <button className="px-2 py-1 text-xs bg-black text-white text-nowrap rounded sm:text-base md:px-4 md:py-2 ">
+        <button className="px-2 py-1 text-xs bg-black text-white text-nowrap rounded sm:text-sm md:px-4 md:py-2 ">
           주문하기
         </button>
       </div>
@@ -92,8 +92,8 @@ const CartProductItem: React.FC<ProductItemProps> = ({
         onClick={() => handleRemove(id)}
       >
         <Image
-          width={18}
-          height={18}
+          width={16}
+          height={16}
           src="/img/icon-delete.svg"
           alt="delete"
           //className="w-6 h-6"
