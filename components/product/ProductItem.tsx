@@ -11,7 +11,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
   return (
     <div>
       <Link href={`/detail/${id}`}>
-        <div className="block rounded-md overflow-hidden border-[1px] border-neutral-200 w-full pb-[100%] relative bg-neutral-200">
+        <div className="block rounded-md overflow-hidden border-[1px] border-neutral-200 w-full pb-[100%] relative bg-neutral-200 mb-2">
           <Image
             src={image}
             alt="product"
@@ -21,10 +21,10 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
           />
         </div>
       </Link>
-      <p className="text-sm text-gray-500">{provider}</p>
+      <p className="text-xs text-gray-500">{provider}</p>
       <p className="font-bold">{name}</p>
       <div>
-        <span className="font-bold text-lg">{ConvertPrice(price)}</span>
+        <span className="font-bold">{ConvertPrice(price)}</span>
         <span>원</span>
       </div>
     </div>

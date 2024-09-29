@@ -112,20 +112,20 @@ const Basket: React.FC = () => {
   }, [checkLists, cartList]);
 
   return (
-    <div className="max-w-[1200px] m-auto px-3 py-20 md:py-32 bg-[#f5f6f8]">
+    <div className="max-w-[1200px] m-auto px-3 py-20 md:py-32">
       <div className="pb-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center pb-7 md:pb-14">
-          Cart
+        <h2 className="text-xl md:text-3xl font-bold text-center py-3 lg:pb-5 lg:pt-0">
+          CART
         </h2>
         <div>
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-1 items-center">
             <input
               type="checkbox"
               checked={isAllChecked}
               onChange={(e) => handleCheckAll(e.target.checked)}
               className="w-[20px] h-[20px] cursor-pointer"
             />
-            <p className="text-sm">전체선택</p>
+            <p className="text-xs">전체선택</p>
           </div>
         </div>
       </div>
@@ -144,9 +144,9 @@ const Basket: React.FC = () => {
               />
             ))}
           </div>
-          <div className="max-w-[1000px] md:mx-auto flex flex-col md:flex-row text-center justify-between my-7 text-sm md:text-base md:items-center md:gap-20">
+          <div className="max-w-[1000px] md:mx-auto flex flex-col md:flex-row text-center justify-between my-3 lg:my-7 text-sm md:text-base md:items-center md:gap-20">
             <div className="flex flex-col md:flex-row md:gap-10 items-center">
-              <div className="w-full flex items-center justify-between py-4 md:w-auto md:block border-b-[1px] border-[#ddd] md:border-0">
+              <div className="w-full flex items-center justify-between py-3 lg:py-4 md:w-auto md:block border-b-[1px] border-[#ddd] md:border-0">
                 <p>총 상품금액</p>
                 <p>
                   <span className="text-lg font-bold">

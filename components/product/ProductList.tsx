@@ -3,6 +3,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { Product } from "@/types/Product";
 import { Spin } from "antd";
+import { BeatLoader } from "react-spinners";
 
 const ProductItem = dynamic(() => import("@/components/product/ProductItem"), {
   suspense: true,
@@ -83,15 +84,15 @@ const ProductList = () => {
   if (loading) {
     return (
       <div className="text-center p-10 m-auto">
-        <Spin size="large" />
+        <BeatLoader color="#c5c5c5" margin={3} />
       </div>
     );
   }
 
   return (
     <div className="max-w-[1200px] mx-auto pt-[3vw] px-4">
-      <h3 className="text-center font-bold text-2xl sm:text-3xl pb-[3vw] md:pb-7">
-        goods
+      <h3 className="text-center font-black text-xl sm:text-3xl pb-[3vw] md:pb-7 tracking-tighter">
+        GOODS ITEMS
       </h3>
       <div className="flex flex-col justify-between items-center mb-4 lg:flex-row">
         <div className="flex flex-row justify-start gap-2 text-sm text-gray-500 whitespace-nowrap w-full overflow-x-auto no-scrollbar">
@@ -111,24 +112,24 @@ const ProductList = () => {
         </div>
         <div className="flex flex-row justify-end items-center gap-4 text-sm text-gray-500 whitespace-nowrap">
           <p
-            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer"
+            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
             onClick={() => sortProduct("recent")}
           >
-            latest
+            최신순
           </p>
           |
           <p
-            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer"
+            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
             onClick={() => sortProduct("row")}
           >
-            row price
+            낮은 가격순
           </p>
           |
           <p
-            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer"
+            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
             onClick={() => sortProduct("high")}
           >
-            high price
+            높은 가격순
           </p>
         </div>
       </div>

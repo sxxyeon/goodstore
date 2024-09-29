@@ -52,9 +52,9 @@ const HotProd = () => {
 
   return (
     <div>
-      <div className="relative max-w-[1200px] mx-auto md:pt-10 lg:pt-16">
-        <h3 className="text-center font-bold text-2xl sm:text-3xl pb-[3vw] md:pb-7">
-          hot goods
+      <div className="relative max-w-[1200px] mx-auto pt-4 md:pt-10 lg:pt-16">
+        <h3 className="text-center font-black text-xl sm:text-3xl pb-[3vw] md:pb-7 tracking-tighter">
+          HOT GOODS
         </h3>
         <Swiper
           className="!pb-5"

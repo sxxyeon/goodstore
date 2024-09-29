@@ -114,9 +114,11 @@ const Page: React.FC<Props> = ({ params }) => {
           <div className=" flex flex-col justify-between h-full">
             <div>
               <p className="text-gray-500">{item.provider}</p>
-              <p className="text-2xl font-bold pb-4 pt-2">{item.name}</p>
+              <p className="text-lg lg:text-xl font-bold pb-4 pt-2">
+                {item.name}
+              </p>
               <div className="">
-                <span className="text-2xl font-bold">
+                <span className="text-lg lg:text-xl font-bold">
                   {ConvertPrice(item.price.toString())}
                   <span className="text-base font-normal">원</span>
                 </span>
@@ -150,7 +152,7 @@ const Page: React.FC<Props> = ({ params }) => {
                 />
               </div>
 
-              <div className="flex flex-row justify-between items-center py-5 border-t-[1px] border-neutral-300">
+              <div className="flex flex-row justify-between items-center py-3 lg:py-5 border-t-[1px] border-neutral-300">
                 <span className="inline-block text-sm">총 상품 금액</span>
                 <div className="flex items-center">
                   <span className="inline-block mr-4 text-sm text-gray-500">
@@ -167,14 +169,14 @@ const Page: React.FC<Props> = ({ params }) => {
 
               <div className="flex flex-row justify-between items-center gap-3 pt-4 pb-10 border-t-[1px] border-black">
                 <button
-                  className="p-4 border-black border-2 rounded text-black box-border"
+                  className="p-3 lg:p-4 border-black border-[1px] rounded text-black box-border"
                   onClick={() => {
                     handleCart(item);
                   }}
                 >
                   장바구니
                 </button>
-                <button className="flex-1 border-black border-2 bg-black text-white p-4 rounded">
+                <button className="flex-1 border-black border-[1px] bg-black text-white p-3 lg:p-4 rounded">
                   바로 구매
                 </button>
               </div>

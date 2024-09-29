@@ -75,7 +75,7 @@ const Header: React.FC = () => {
       <div
         className={`fixed ${
           isSearchOpen ? "translate-y-[0px]" : "translate-y-[-140px]"
-        } w-full h-[140px] bg-[#ebf94c] bg-opacity-80 backdrop-blur-md z-[100] transition-all duration-300 ease-out`}
+        } w-full h-[140px] bg-[#ebf94c] backdrop-blur-md z-[100] transition-all duration-300 ease-out`}
       >
         <form
           className="relative min-w-0 max-w-[300px] mx-auto mt-11"
@@ -91,15 +91,15 @@ const Header: React.FC = () => {
           />
           <FeatherIcon
             icon="search"
-            size="26"
-            className={`absolute top-[4px] right-2 text-black`}
+            size="23"
+            className={`absolute top-[7px] right-2 text-black`}
           />
         </form>
         <button
           onClick={toggleOpenSearch}
           className={`absolute bottom-4 right-4`}
         >
-          <FeatherIcon icon="x" size="26" className={` text-black`} />
+          <FeatherIcon icon="x" size="23" className={` text-black`} />
         </button>
       </div>
       <header
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                     isScrolled || !isMain ? "/img/logo_b.png" : "/img/logo.png"
                   }`}
                   alt="logo"
-                  className="w-[140px]"
+                  className="h-[35px]"
                 />
               </h1>
             </Link>
@@ -134,24 +134,24 @@ const Header: React.FC = () => {
             <button onClick={toggleOpenSearch} className={`relative`}>
               <FeatherIcon
                 icon="search"
-                size="26"
+                size="23"
                 className={`absolute top-[4px] right-2 ${
                   isScrolled || !isMain ? "text-black" : "text-white"
                 } `}
               />
             </button>
 
-            <Link href="/basket" className=" block w-[40px] h-[40px]">
+            <Link href="/basket" className=" block w-[35px] h-[35px]">
               <div className="relative">
                 <FeatherIcon
                   icon="shopping-bag"
-                  size="26"
+                  size="23"
                   className={`absolute top-[4px] ${
                     isScrolled || !isMain ? "text-black" : "text-white"
                   } `}
                 />
                 {cartList.length >= 1 ? (
-                  <div className="absolute right-[0px] top-0 bg-black text-white rounded-full w-[14px] h-[14px] leading-[14px] text-center text-xs">
+                  <div className="absolute right-[10px] top-[3px] bg-black text-white rounded-full w-[13px] h-[13px] leading-[14px] text-center text-[9px]">
                     <p>{cartList.length}</p>
                   </div>
                 ) : (
