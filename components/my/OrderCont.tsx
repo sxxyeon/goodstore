@@ -58,7 +58,7 @@ const OrderCont: React.FC<Props> = ({ items }) => {
                   </div>
                 </div>
               </div>
-              <div className="date">{item?.date}</div>
+              <div className="date text-xs leading-5">{item?.date}</div>
               {/* Toggle 버튼 */}
               <button className="h-fit" onClick={() => toggleExpand(item.id)}>
                 {isExpanded ? (
@@ -105,7 +105,7 @@ const OrderCont: React.FC<Props> = ({ items }) => {
                 >
                   <img src={order.image} alt={order.name} width={60} />
                   <div className="flex flex-col">
-                    <span className="text-sm text-gray-500">
+                    <span className="text-xs text-gray-500">
                       {order.provider}
                     </span>
                     <span>{order.name}</span>

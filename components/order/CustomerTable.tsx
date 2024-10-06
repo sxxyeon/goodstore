@@ -18,8 +18,8 @@ const CustomerTable: React.FC<Props> = ({ onChange, orderInfo }) => {
       </colgroup>
       <tbody>
         <tr className=" align-text-bottom">
-          <th className="p-2 md:p-7 font-normal bg-neutral-100">
-            주문하시는 분
+          <th className="p-2 md:p-7 font-normal bg-neutral-100 text-sm">
+            주문자명
           </th>
           <td className="p-2 md:p-7">
             <input
@@ -32,7 +32,9 @@ const CustomerTable: React.FC<Props> = ({ onChange, orderInfo }) => {
           </td>
         </tr>
         <tr className="p-2 md:p-7 border-t-[1px]">
-          <th className="p-2 md:p-7 font-normal  bg-neutral-100">주소</th>
+          <th className="p-2 md:p-7 font-normal  bg-neutral-100 text-sm">
+            주소
+          </th>
           <td className="p-2 md:p-7">
             <input
               name="address"

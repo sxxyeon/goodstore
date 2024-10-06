@@ -33,11 +33,13 @@ const OrderTable: React.FC<Props> = ({ items }) => {
       <tbody>
         {arrayItems.map((item) => (
           <tr key={item.id} className="border-b-[1px]">
-            <td className="border-r-[1px] p-2 md:p-7">
+            <td className={`${isMobile ? "" : "border-r-[1px]"} p-2 md:p-7`}>
               <div className="flex gap-3 items-start">
                 <img src={item?.image} alt="thum" width={80} height={80} />
                 <div className="sm:flex flex-col gap-1">
-                  <span className="text-gray-500 ">{item?.provider}</span>
+                  <span className="text-gray-500 text-sm">
+                    {item?.provider}
+                  </span>
                   <h5 className="font-bold">{item?.name}</h5>
                   {isMobile && (
                     <>
