@@ -1,8 +1,12 @@
 @import './font.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwind base; /* common 등 reset 기본스타일 */
+@tailwind components; /* class 등 재사용성 높은 유틸리티 클래스*/
+@tailwind utilities; /* 테일윈드가 제공하지 않은 유틸리티 클래스 */
+
+@layer components{
+
+}
 
 
 

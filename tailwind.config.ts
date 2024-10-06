@@ -9,11 +9,9 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
-      // backgroundImage: {
-      //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      //   "gradient-conic":
-      //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      // },
+      boxShadow: {
+        custom: "0 1px 7px 4px rgba(0, 0, 0, 0.1)", // 커스텀 shadow 값 추가
+      },
       colors: {
         "custom-red": "rgba(255,127,116,1)",
         "custom-orange": "rgba(235,183,123,1)",

@@ -5,6 +5,8 @@ import { CartProduct } from "@/types/Product";
 import CartProductItem from "@/components/basket/CartProductItem";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
+
 const Basket: React.FC = () => {
   const { fetchCartData } = useCart();
   const [total, setTotal] = useState(0);
@@ -111,6 +113,19 @@ const Basket: React.FC = () => {
     calculateTotal();
   }, [checkLists, cartList]);
 
+  const router = useRouter();
+
+  const handleOrder = () => {
+    const checkedItems: CartProduct[] = cartList?.filter((item) =>
+      checkLists.includes(item.id)
+    );
+    const item = new URLSearchParams({
+      item: JSON.stringify(checkedItems),
+    }).toString();
+
+    router.push(`/order?${item}`);
+  };
+
   return (
     <div className="max-w-[1200px] m-auto px-3 py-20 md:py-32">
       <div className="pb-6">
@@ -192,7 +207,10 @@ const Basket: React.FC = () => {
               </p>
             </div>
           </div>
-          <button className="bg-black text-white w-full md:w-[50%] self-center rounded-lg py-5 md:mt-10">
+          <button
+            onClick={handleOrder}
+            className="bg-black text-white w-full md:w-[50%] self-center rounded-lg py-5 md:mt-10"
+          >
             주문하기
           </button>
         </div>

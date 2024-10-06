@@ -83,7 +83,7 @@ const CartProductItem: React.FC<ProductItemProps> = ({
           />
         </div>
 
-        <button className="px-2 py-1 text-xs bg-black text-white text-nowrap rounded sm:text-sm md:px-4 md:py-2 ">
+        <button className="px-2 py-1 text-xs bg-black text-white text-nowrap rounded-sm sm:text-sm md:px-4 md:py-2 ">
           주문하기
         </button>
       </div>

@@ -5,6 +5,8 @@ import { CartProduct } from "@/types/Product";
 import { ConvertPrice } from "@/utill/convert-price.js";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface Props {
   params: {
@@ -100,6 +102,15 @@ const Page: React.FC<Props> = ({ params }) => {
       alert("장바구니에 추가되었습니다.");
     }
   };
+  const router = useRouter();
+  const orderItem = { ...item, quantity: count };
+  const query = new URLSearchParams({
+    item: JSON.stringify(orderItem),
+  }).toString();
+  const goOrderPage = () => {
+    router.push(`/order?${query}`);
+  };
+
   return (
     item && (
       <div className="flex flex-col w-full justify-between gap-10 mt-[60px] md:mt-[65px] lg:max-w-[1200px] lg:flex-row lg:mx-auto lg:my-[200px]">
@@ -176,7 +187,10 @@ const Page: React.FC<Props> = ({ params }) => {
                 >
                   장바구니
                 </button>
-                <button className="flex-1 border-black border-[1px] bg-black text-white p-3 lg:p-4 rounded">
+                <button
+                  onClick={goOrderPage}
+                  className="flex-1 border-black border-[1px] bg-black text-white p-3 lg:p-4 rounded"
+                >
                   바로 구매
                 </button>
               </div>

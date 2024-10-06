@@ -15,3 +15,19 @@ export interface CartProduct {
   provider: string;
   price: number;
 }
+
+export interface Order {
+  id: number;
+  date: string;
+  customer: string;
+  address: string;
+  payment: string;
+  orderList: {
+    id: number;
+    name: string;
+    image: string;
+    quantity: number;
+    provider: string;
+    price: number;
+  }[];
+}
