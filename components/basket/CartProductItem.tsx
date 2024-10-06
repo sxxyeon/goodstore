@@ -25,9 +25,8 @@ const CartProductItem: React.FC<ProductItemProps> = ({
   const { id, name, image, quantity, provider, price } = item;
 
   const router = useRouter();
-
   return (
-    <section className="relative lg:px-5 lg:py-5 px-3 py-3 rounded-lg bg-white shadow-neutral-200 shadow-[0_1px_4px_3px_rgba(0,0,0,.1)]">
+    <section className="relative lg:px-10 lg:py-5 pl-3 pr-7 py-3 rounded-lg bg-white shadow-neutral-200 shadow-[0_1px_4px_3px_rgba(0,0,0,.1)]">
       <input
         type="checkbox"
         id={`${id}`}
@@ -82,10 +81,6 @@ const CartProductItem: React.FC<ProductItemProps> = ({
             onClick={() => handleQuantity("plus", id, quantity)}
           />
         </div>
-
-        <button className="px-2 py-1 text-xs bg-black text-white text-nowrap rounded-sm sm:text-sm md:px-4 md:py-2 ">
-          주문하기
-        </button>
       </div>
       <div
         className="ml-4 cursor-pointer absolute right-[5px] top-[5px]"
