@@ -44,7 +44,7 @@ const HotProd = () => {
     };
 
     fetchHots();
-  });
+  }, []);
 
   if (!isClient) {
     return null; //서버사이드 렌더링 시에는 아무것도 렌더링 하지 않음
