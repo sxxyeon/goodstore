@@ -131,33 +131,41 @@ const Header: React.FC = () => {
           </div>
 
           <div className="flex flex-row gap-2 sm:gap-3 justify-between">
-            <button onClick={toggleOpenSearch} className={`relative`}>
+            <button onClick={toggleOpenSearch} className={`relative w-[35px]`}>
               <FeatherIcon
                 icon="search"
                 size="23"
-                className={`absolute top-[4px] right-2 ${
+                className={`absolute top-[4px] left-[50%] translate-x-[-50%] ${
                   isScrolled || !isMain ? "text-black" : "text-white"
                 } `}
               />
             </button>
 
-            <Link href="/basket" className=" block w-[35px] h-[35px]">
-              <div className="relative">
-                <FeatherIcon
-                  icon="shopping-bag"
-                  size="23"
-                  className={`absolute top-[4px] ${
-                    isScrolled || !isMain ? "text-black" : "text-white"
-                  } `}
-                />
-                {cartList.length >= 1 ? (
-                  <div className="absolute right-[10px] top-[3px] bg-black text-white rounded-full w-[13px] h-[13px] leading-[14px] text-center text-[9px]">
-                    <p>{cartList.length}</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
+            <Link href="/basket" className="block w-[35px] h-[35px] relative">
+              <FeatherIcon
+                icon="shopping-bag"
+                size="23"
+                className={`absolute top-[4px] left-[50%] translate-x-[-50%] ${
+                  isScrolled || !isMain ? "text-black" : "text-white"
+                } `}
+              />
+              {cartList.length >= 1 ? (
+                <div className="absolute right-[3px] top-[3px] bg-black text-white rounded-full w-[13px] h-[13px] leading-[14px] text-center text-[9px]">
+                  <p>{cartList.length}</p>
+                </div>
+              ) : (
+                ""
+              )}
+            </Link>
+
+            <Link href="/my" className="block w-[35px] h-[35px] relative">
+              <FeatherIcon
+                icon="user"
+                size="23"
+                className={`absolute top-[4px] left-[50%] translate-x-[-50%] ${
+                  isScrolled || !isMain ? "text-black" : "text-white"
+                } `}
+              />
             </Link>
           </div>
         </div>

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Product } from "@/types/Product";
 import { Spin } from "antd";
 import { BeatLoader } from "react-spinners";
+import { handleLiked } from "@/utill/productUtils";
 
 const ProductItem = dynamic(() => import("@/components/product/ProductItem"), {
   suspense: true,
@@ -14,25 +15,30 @@ const ProductList = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]); // 필터링된 상품 목록
   const [activeCategory, setActiveCategory] = useState<string>("0"); // 선택된 카테고리
   const [loading, setLoading] = useState<boolean>(true);
+  const [isLiked, setIsLiked] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const resp = await fetch(`${process.env.NEXT_PUBLIC_JSON}/products`, {
-          method: "GET",
-        });
-        const json: Product[] = await resp.json();
-        setProducts(json);
-        setFilteredProducts(json); // 초기에는 모든 상품을 보여줌
-        setLoading(false); // 데이터 로드 완료
-      } catch (error) {
-        console.error("Failed to fetch products:", error);
-        setLoading(false);
-      }
-    };
-
     fetchProducts();
   }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_JSON}/products`, {
+        method: "GET",
+      });
+      const json: Product[] = await resp.json();
+      setProducts(json);
+      setFilteredProducts(json); // 초기에는 모든 상품을 보여줌
+      setLoading(false); // 데이터 로드 완료
+    } catch (error) {
+      console.error("Failed to fetch products:", error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    setFilteredProducts(products);
+  }, [products]);
 
   const sortProduct = (type: string) => {
     const sortedProducts = [...filteredProducts]; // 필터링된 상품을 기준으로 정렬
@@ -81,6 +87,11 @@ const ProductList = () => {
     { cat: "ARTIST NAME03", num: "3" },
     { cat: "ARTIST NAME04", num: "4" },
   ];
+
+  const onLikeToggle = (id: number) => {
+    handleLiked(id, products, setProducts, fetchProducts);
+  };
+
   if (loading) {
     return (
       <div className="text-center p-10 m-auto">
@@ -142,7 +153,11 @@ const ProductList = () => {
       >
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10 mb-32">
           {filteredProducts.map((item) => (
-            <ProductItem item={item} key={item.id} />
+            <ProductItem
+              item={item}
+              key={item.id}
+              onLikeToggle={onLikeToggle}
+            />
           ))}
         </div>
       </Suspense>

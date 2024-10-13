@@ -10,7 +10,7 @@ const OneButton: React.FC<Props> = ({ type, text, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`block w-full md:max-w-[500px] m-auto p-4 ${
+      className={`block w-full md:max-w-[600px] m-auto p-4 ${
         type === "light" ? " bg-white border-[1px]" : "bg-black text-white"
       }`}
     >

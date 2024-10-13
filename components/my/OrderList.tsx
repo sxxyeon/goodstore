@@ -1,7 +1,4 @@
-"use client";
 import React, { useEffect, useState } from "react";
-import ContHeader from "../common/ContHeader";
-import OrderTable from "../order/OrderTable";
 import OrderCont from "./OrderCont";
 
 const OrderList = () => {
@@ -14,13 +11,17 @@ const OrderList = () => {
     const json = await resp.json();
     setOrderList(json);
   };
-  console.log(orderList);
 
   return (
     <>
       <div className="flex flex-col items-center">
-        {/* <h5 className="text-lg font-bold py-10">주문내역</h5> */}
-        <OrderCont items={orderList} />
+        {orderList.length > 0 ? (
+          <OrderCont items={orderList} />
+        ) : (
+          <div className="p-40 text-sm text-gray-400 text-center">
+            주문내역이 없습니다.
+          </div>
+        )}
       </div>
     </>
   );

@@ -5,6 +5,7 @@ export interface Product {
   image: string;
   provider: string;
   price: number;
+  isLiked: boolean;
 }
 
 export interface CartProduct {

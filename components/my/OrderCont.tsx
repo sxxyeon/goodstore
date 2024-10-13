@@ -19,7 +19,6 @@ const OrderCont: React.FC<Props> = ({ items }) => {
       setExpandedItem(id); // 열려있지 않으면 열기
     }
   };
-  console.log(items);
   return (
     <div className="w-full flex flex-col gap-5">
       {items.map((item) => {

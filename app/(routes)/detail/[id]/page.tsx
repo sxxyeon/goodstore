@@ -6,7 +6,7 @@ import { ConvertPrice } from "@/utill/convert-price.js";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { handleLiked } from "@/utill/productUtils";
 
 interface Props {
   params: {
@@ -187,6 +187,7 @@ const Page: React.FC<Props> = ({ params }) => {
                 >
                   장바구니
                 </button>
+
                 <button
                   onClick={goOrderPage}
                   className="flex-1 border-black border-[1px] bg-black text-white p-3 lg:p-4 rounded"

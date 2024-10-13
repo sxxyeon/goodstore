@@ -8,13 +8,11 @@ import React, { useState } from "react";
 
 const MyPage = () => {
   const [selectedTab, setSelectedTab] = useState<string>("주문내역");
-  const tabs = ["주문내역", "취소내역", "찜 목록"];
+  const tabs = ["주문내역", "찜 목록"];
   const renderContent = () => {
     switch (selectedTab) {
       case "주문내역":
         return <OrderList />;
-      case "취소내역":
-        return <CancelList />;
       case "찜 목록":
         return <LikedList />;
       default:
@@ -25,8 +23,8 @@ const MyPage = () => {
   const isSelected = (tab: string) => selectedTab === tab;
 
   return (
-    <ContHeader title="주문 내역">
-      <div className="flex flex-row mt-10 hidden">
+    <ContHeader title="마이 페이지">
+      <div className="flex flex-row items-center justify-center mt-10">
         {tabs.map((tab) => (
           <OneButton
             key={tab}
@@ -36,10 +34,7 @@ const MyPage = () => {
           />
         ))}
       </div>
-      <div className="content mt-8">
-        <OrderList />
-      </div>
-      {/* <div className="content">{renderContent()}</div> */}
+      <div className="content mt-8">{renderContent()}</div>
     </ContHeader>
   );
 };
