@@ -3,6 +3,8 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Product } from "@/types/Product";
 import ProductItem from "@/components/product/ProductItem";
+import { handleLiked } from "@/utill/productUtils";
+
 const Search = () => {
   const [list, setList] = useState<Product[] | []>([]);
 
@@ -29,14 +31,20 @@ const Search = () => {
     fetchData();
   }, [searchTerm]);
 
-  console.log(searchTerm);
+  const onLikeToggle = (id: number) => {
+    handleLiked(id, list, setList, fetchData);
+  };
   return (
     <Suspense fallback={"loading"}>
       <div className="max-w-[1200px] mx-auto px-4 py-28 md:py-36">
         {list?.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10">
             {list?.map((item) => (
-              <ProductItem key={item.id} item={item} />
+              <ProductItem
+                key={item.id}
+                item={item}
+                onLikeToggle={onLikeToggle}
+              />
             ))}
           </div>
         ) : (
