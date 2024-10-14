@@ -18,7 +18,7 @@ const OrderList = () => {
         {orderList.length > 0 ? (
           <OrderCont items={orderList} />
         ) : (
-          <div className="p-40 text-sm text-gray-400 text-center">
+          <div className="py-40 text-sm text-gray-400 text-center">
             주문내역이 없습니다.
           </div>
         )}

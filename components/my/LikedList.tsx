@@ -25,7 +25,7 @@ const LikedList: React.FC = () => {
       {likedList.length > 0 ? (
         <LikedItem likedList={likedList} onLikedToggle={onLikedToggle} />
       ) : (
-        <div className="p-40 text-sm text-gray-400 text-center">
+        <div className="py-40 text-sm text-gray-400 text-center">
           찜한 내역이 없습니다.
         </div>
       )}
