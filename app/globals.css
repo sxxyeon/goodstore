@@ -16,7 +16,7 @@
    }
   .custom-after::before {
    @apply bg-black bg-opacity-50 content-[''] absolute top-0 left-0 w-full h-full backdrop-blur-lg;
-   -webkit-backdrop-filter: blur(16x);
+   -webkit-backdrop-filter: blur(16px);
   }
   .custom-dim::before {
     @apply bg-black bg-opacity-50 content-[''] absolute top-0 left-0 w-full h-full;
