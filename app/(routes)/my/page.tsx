@@ -1,7 +1,6 @@
 "use client";
 import ContHeader from "@/components/common/ContHeader";
 import OneButton from "@/components/common/OneButton";
-import CancelList from "@/components/my/CancelList";
 import LikedList from "@/components/my/LikedList";
 import OrderList from "@/components/my/OrderList";
 import React, { useState } from "react";
@@ -34,7 +33,7 @@ const MyPage = () => {
           />
         ))}
       </div>
-      <div className="content mt-8">{renderContent()}</div>
+      <div className="mycont mt-8">{renderContent()}</div>
     </ContHeader>
   );
 };

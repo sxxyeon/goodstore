@@ -13,7 +13,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item, onLikeToggle }) => {
   return (
     <div className="relative">
       <Link href={`/detail/${id}`}>
-        <div className="block rounded-md overflow-hidden border-[1px] border-neutral-200 w-full pb-[100%] relative bg-neutral-200 mb-2">
+        <div className="block overflow-hidden border-[1px] border-neutral-200 w-full pb-[100%] relative bg-neutral-200 mb-2">
           <Image
             src={image}
             alt="product"

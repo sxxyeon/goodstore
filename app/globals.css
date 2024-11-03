@@ -4,22 +4,64 @@
 @tailwind components; /* class 등 재사용성 높은 유틸리티 클래스*/
 @tailwind utilities; /* 테일윈드가 제공하지 않은 유틸리티 클래스 */
 
-@layer components{
-
+@layer utilities {
 }
 
+@layer components{
+
+   /* effect */
+   .content{@apply relative;}
+   .content::before{
+    @apply -z-[2] absolute block content-[''] max-w-[1200px] w-full h-full translate-x-[-50%] top-0 left-[50%] border-[1px] border-black border-opacity-10 border-t-0 border-b-0;
+   }
+  .custom-after::before {
+   @apply bg-black bg-opacity-50 content-[''] absolute top-0 left-0 w-full h-full backdrop-blur-lg;
+  }
+  .custom-dim::before {
+    @apply bg-black bg-opacity-50 content-[''] absolute top-0 left-0 w-full h-full;
+  }
+
+  /* animation */
+
+  @keyframes flow-text {
+   0% {
+     transform: translateX(0%);
+   }
+   50% {
+     transform: translateX(-100%);
+   }
+   100% {
+     transform: translateX(-200%);
+   }
+  }
+
+  @keyframes flow-text2 {
+   0% {
+     transform: translateX(100%);
+   }
+   50% {
+     transform: translateX(0%);
+   }
+   100% {
+     transform: translateX(-100%);
+   }
+  }
+
+  .flow-text {
+    @apply whitespace-nowrap will-change-transform;
+    animation: flow-text 18s linear infinite;
+  }
+  .flow-text2 {
+    @apply whitespace-nowrap will-change-transform;
+    animation: flow-text2 18s linear infinite;
+  }
+}
 
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-:root {
-  /* --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255; */
 }
 
 @media (prefers-color-scheme: light) {
@@ -29,33 +71,27 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-body {
-  
-}
 
-/* 스크롤 바 없애기 */
+/* no-scroll */
 .no-scrollbar {
-  /* Firefox */
   scrollbar-width: none;
-  /* Safari and Chrome */
 }
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 /* swiper custom */
-
 .custom-prev svg{opacity: .6; width: 80px; height: 80px; top: 50%; transform: translateY(-50%); left:-20px;}
 .custom-next svg{opacity: .6; width: 80px; height: 80px; top: 50%; transform: translateY(-50%); right:-20px;}
-.swiper-pagination{align-items: center;}
-.swiper-pagination .swiper-pagination-bullet{width: 12px; height:12px;}
+.swiper-pagination{bottom: 10px !important;}
+.swiper-pagination .swiper-pagination-bullet{width: 30px; height:3px; border-radius: 0 !important;}
 .swiper-pagination-bullet-active {
-  border: 1px solid #000 !important;
   background-color: #fff !important;
 }
+
 @media screen and (max-width:768px){
   .custom-prev{display: none !important;}
   .custom-next{display: none !important;}
   .swiper-pagination{display: none !important; bottom: 0 !important;}
 }
+

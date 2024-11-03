@@ -4,6 +4,7 @@ import Link from "next/link";
 import FeatherIcon from "feather-icons-react";
 import { useRouter, usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
+import TextFlow from "../banner/TextFlow";
 const Header: React.FC = () => {
   const [search, setSearch] = useState<string>("");
   const { cartList, fetchCartData } = useCart();
@@ -72,6 +73,7 @@ const Header: React.FC = () => {
   };
   return (
     <>
+      <TextFlow />
       <div
         className={`fixed ${
           isSearchOpen ? "translate-y-[0px]" : "translate-y-[-140px]"
@@ -103,10 +105,10 @@ const Header: React.FC = () => {
         </button>
       </div>
       <header
-        className={`w-full fixed z-50 transition-opacity duration-500 ${
+        className={`w-full fixed z-50 ${
           isScrolled || !isMain
-            ? "md:top-1 md:w-[95%] md:max-w-[1300px] left-[50%] translate-x-[-50%] bg-[#ebf94c] bg-opacity-70 backdrop-blur-md h-[60px] md:h-[60px] md:rounded-lg"
-            : "h-[90px] md:h-[90px] top-0 left-0 bg-opacity-0"
+            ? "md:top-[30px] md:w-[95%] md:max-w-[1300px] left-[50%] translate-x-[-50%] bg-[#ebf94c] bg-opacity-70 backdrop-blur-md h-[60px] md:h-[60px] md:rounded-lg"
+            : "h-[90px] md:h-[90px] top-[30px] left-0 bg-opacity-0"
         }`}
       >
         <div

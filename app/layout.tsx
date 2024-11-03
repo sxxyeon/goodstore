@@ -24,7 +24,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <Suspense fallback={"loading"}>
-            <div className="flex-1 ">{children}</div>
+            <div className="flex-1 content">{children}</div>
           </Suspense>
           <Footer />
         </CartProvider>

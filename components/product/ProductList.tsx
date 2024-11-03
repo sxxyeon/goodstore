@@ -101,67 +101,76 @@ const ProductList = () => {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto pt-[3vw] px-4">
-      <h3 className="text-center font-black text-xl sm:text-3xl pb-[3vw] md:pb-7 tracking-tighter">
-        GOODS ITEMS
-      </h3>
-      <div className="flex flex-col justify-between items-center mb-4 lg:flex-row">
-        <div className="flex flex-row justify-start gap-2 text-sm text-gray-500 whitespace-nowrap w-full overflow-x-auto no-scrollbar">
-          {cat.map((item, idx) => {
-            return (
-              <p
-                key={idx}
-                onClick={() => sortCate(item.num)}
-                className={`px-4 py-2 rounded-full cursor-pointer text-black font-bold ${
-                  activeCategory === item.num ? "bg-[#EBF94C]" : ""
-                }`}
-              >
-                {item.cat}
-              </p>
-            );
-          })}
-        </div>
-        <div className="flex flex-row justify-end items-center gap-4 text-sm text-gray-500 whitespace-nowrap">
-          <p
-            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
-            onClick={() => sortProduct("recent")}
-          >
-            최신순
-          </p>
-          |
-          <p
-            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
-            onClick={() => sortProduct("row")}
-          >
-            낮은 가격순
-          </p>
-          |
-          <p
-            className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
-            onClick={() => sortProduct("high")}
-          >
-            높은 가격순
-          </p>
-        </div>
+    <section className="my-10 md:my-24 lg:my-36 pt-10 md:pt-20 border-black border-opacity-10 border-[1px] border-l-0 border-r-0">
+      <div className="max-w-[1200px] mx-auto px-3 pb-3 md:pb-10">
+        <h3 className="font-black text-xl sm:text-3xl pb-[3vw] md:pb-7 tracking-tighter">
+          GOODS
+        </h3>
+        <p className="text-xs sm:text-sm">
+          전체 굿즈를 카테고리별로 확인해 보세요.
+          <br />
+          Check out all the goods by category.
+        </p>
       </div>
-      <Suspense
-        fallback={
-          <div className="text-center p-10 m-auto">
-            <Spin size="large" />
+      <div className="max-w-[1200px] mx-auto px-3 xl:px-0">
+        <div className="flex flex-col justify-between items-center mb-4 lg:flex-row">
+          <div className="flex flex-row justify-start gap-2 text-sm text-gray-500 whitespace-nowrap w-full overflow-x-auto no-scrollbar">
+            {cat.map((item, idx) => {
+              return (
+                <p
+                  key={idx}
+                  onClick={() => sortCate(item.num)}
+                  className={`px-4 py-2 rounded-full cursor-pointer text-black font-bold ${
+                    activeCategory === item.num ? "bg-[#EBF94C]" : ""
+                  }`}
+                >
+                  {item.cat}
+                </p>
+              );
+            })}
           </div>
-        }
-      >
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10 mb-32">
-          {filteredProducts.map((item) => (
-            <ProductItem
-              item={item}
-              key={item.id}
-              onLikeToggle={onLikeToggle}
-            />
-          ))}
+          <div className="flex flex-row justify-end items-center gap-4 text-sm text-gray-500 whitespace-nowrap self-end">
+            <p
+              className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
+              onClick={() => sortProduct("recent")}
+            >
+              최신순
+            </p>
+            |
+            <p
+              className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
+              onClick={() => sortProduct("row")}
+            >
+              낮은 가격순
+            </p>
+            |
+            <p
+              className="px-1 py-3 md:px-3 md:py-2 cursor-pointer text-[0.8rem]"
+              onClick={() => sortProduct("high")}
+            >
+              높은 가격순
+            </p>
+          </div>
         </div>
-      </Suspense>
-    </div>
+        <Suspense
+          fallback={
+            <div className="text-center p-10 m-auto">
+              <Spin size="large" />
+            </div>
+          }
+        >
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10 mb-32">
+            {filteredProducts.map((item) => (
+              <ProductItem
+                item={item}
+                key={item.id}
+                onLikeToggle={onLikeToggle}
+              />
+            ))}
+          </div>
+        </Suspense>
+      </div>
+    </section>
   );
 };
 

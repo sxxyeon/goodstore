@@ -113,7 +113,7 @@ const Page: React.FC<Props> = ({ params }) => {
 
   return (
     item && (
-      <div className="flex flex-col w-full justify-between gap-10 mt-[60px] md:mt-[65px] lg:max-w-[1200px] lg:flex-row lg:mx-auto lg:my-[200px]">
+      <div className="flex flex-col w-full justify-between gap-10 mt-[60px] md:mt-[65px] lg:max-w-[1200px] lg:flex-row lg:px-5 lg:mx-auto lg:my-[200px]">
         <div className="lg:w-[500px] lg:h-[500px] rounded-lg overflow-hidden">
           <img
             src={`${item.image}`}
