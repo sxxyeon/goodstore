@@ -71,7 +71,7 @@ const NewArrival = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="relative arrival-top flex items-center w-full overflow-hidden h-[60vh] text-white bg-fixed custom-dim"
+      className="relative arrival-top flex items-center w-full overflow-hidden h-[60vh] text-white lg:bg-fixed custom-dim"
     >
       <h3
         className={`text-test transition-transform text-[8vw] font-black ease-linear translate-x-0`}

@@ -77,7 +77,7 @@ const NewConcert = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              className="w-full h-[400px] md:w-[420px] md:h-[610px] max-w-[50%]"
+              className="w-full h-[400px] max-w-[70%] md:w-[420px] md:h-[610px] md:max-w-[50%]"
             ></span>
             <div className=" text-white flex-1 flex flex-col gap-5 justify-between">
               <div className="flex flex-col gap-3 flex-1 justify-center">
