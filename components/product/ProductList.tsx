@@ -159,7 +159,7 @@ const ProductList = () => {
             </div>
           }
         >
-          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10 mb-32">
+          <div className="grid grid-cols-2 mb-10 md:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10 lg:mb-32">
             {filteredProducts.map((item) => (
               <ProductItem
                 item={item}

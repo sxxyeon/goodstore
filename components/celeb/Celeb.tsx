@@ -85,7 +85,7 @@ const Celeb = () => {
           <SwiperSlide key={item.id}>
             <Link href={`#`}>
               <div
-                className="h-[400px] lg:h-[500px]"
+                className="h-[330px] lg:h-[450px]"
                 style={{
                   backgroundImage: `url(${item.image})`,
                   backgroundSize: "cover",
