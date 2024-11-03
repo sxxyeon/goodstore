@@ -215,7 +215,7 @@ const Basket: React.FC = () => {
           </button>
         </div>
       ) : (
-        <div className="text-center">
+        <div className="py-40 text-sm text-gray-400 text-center">
           <p>장바구니에 담긴 상품이 없습니다.</p>
         </div>
       )}
