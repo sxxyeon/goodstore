@@ -5,13 +5,14 @@ import FeatherIcon from "feather-icons-react";
 import { useRouter, usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import TextFlow from "../banner/TextFlow";
+import useIsMobile from "@/hooks/useIsMobile";
 const Header: React.FC = () => {
   const [search, setSearch] = useState<string>("");
   const { cartList, fetchCartData } = useCart();
   const [isScrolled, setIsScrolled] = useState<boolean>(false); // 스크롤 상태 관리
   const [isMain, setIsMain] = useState<boolean>(true);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-
+  const isMobile = useIsMobile();
   const router = useRouter();
   const path = usePathname();
   const searchRef = useRef<any | null>(null);
@@ -108,7 +109,9 @@ const Header: React.FC = () => {
         className={`w-full fixed z-50 ${
           isScrolled || !isMain
             ? "md:top-[30px] md:w-[95%] md:max-w-[1300px] left-[50%] translate-x-[-50%] bg-[#ebf94c] bg-opacity-70 backdrop-blur-md h-[60px] md:h-[60px] md:rounded-lg"
-            : "h-[90px] md:h-[90px] top-[30px] left-0 bg-opacity-0"
+            : `h-[90px] md:h-[90px] ${
+                isMobile ? "top-[0px]" : "top-[30px]"
+              } left-0 bg-opacity-0`
         }`}
       >
         <div
