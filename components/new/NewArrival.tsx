@@ -43,7 +43,6 @@ const NewArrival = () => {
       if (text && target) {
         const sectionHeight = target?.getBoundingClientRect().height;
         const sectionTop = target?.getBoundingClientRect().top + sectionHeight;
-        const textWidth = text?.getBoundingClientRect().width;
 
         if (window.scrollY > sectionTop) {
           console.log("start!");
@@ -58,7 +57,7 @@ const NewArrival = () => {
       }
     };
     window.addEventListener("scroll", scrolling);
-  }, []);
+  }, [arrivals]);
 
   if (!isClient) {
     return null; //서버사이드 렌더링 시에는 아무것도 렌더링 하지 않음
