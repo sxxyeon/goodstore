@@ -7,7 +7,7 @@ import NewConcert from "@/components/new/NewConcert";
 import Celeb from "@/components/celeb/Celeb";
 export default function Home() {
   return (
-    <div>
+    <div className="main_cont">
       <Banner />
       <HotProd />
       <NewArrival />

@@ -1,6 +1,6 @@
 "use client";
 import useIsMobile from "@/hooks/useIsMobile";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const NewArrival = () => {
   const isMobile = useIsMobile();
@@ -32,7 +32,7 @@ const NewArrival = () => {
   return (
     <section
       style={{
-        backgroundImage: `url(/img/new_arrival.png)`,
+        backgroundImage: `url(/img/new_arrival.webp)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

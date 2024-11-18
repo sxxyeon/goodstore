@@ -122,7 +122,7 @@ const Header: React.FC = () => {
           }`}
         >
           <div>
-            <Link href="/">
+            <Link href="/" aria-label="메인">
               <h1 className="h-full">
                 <img
                   src={`${
@@ -136,7 +136,11 @@ const Header: React.FC = () => {
           </div>
 
           <div className="flex flex-row gap-2 sm:gap-3 justify-between">
-            <button onClick={toggleOpenSearch} className={`relative w-[35px]`}>
+            <button
+              onClick={toggleOpenSearch}
+              className={`relative w-[35px]`}
+              aria-label="검색"
+            >
               <FeatherIcon
                 icon="search"
                 size="23"
@@ -146,7 +150,11 @@ const Header: React.FC = () => {
               />
             </button>
 
-            <Link href="/basket" className="block w-[35px] h-[35px] relative">
+            <Link
+              href="/basket"
+              className="block w-[35px] h-[35px] relative"
+              aria-label="장바구니"
+            >
               <FeatherIcon
                 icon="shopping-bag"
                 size="23"
@@ -163,7 +171,11 @@ const Header: React.FC = () => {
               )}
             </Link>
 
-            <Link href="/my" className="block w-[35px] h-[35px] relative">
+            <Link
+              href="/my"
+              className="block w-[35px] h-[35px] relative"
+              aria-label="마이페이지"
+            >
               <FeatherIcon
                 icon="user"
                 size="23"

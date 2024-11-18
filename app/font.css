@@ -1,25 +1,27 @@
 @font-face {
-    font-family: 'LINESeedKR';
-    font-weight: light;
-    src: url('../public/font/LINESeedKR-Th.woff2');
-  }
-  @font-face {
-    font-family: 'LINESeedKR';
-    font-weight: normal;
-    src: url('../public/font/LINESeedKR-Rg.woff2');
-  }
-  @font-face {
-    font-family: 'LINESeedKR';
-    font-weight: bold;
-    src: url('../public/font/LINESeedKR-Bd.woff2');
-  }
-  
+  font-family: "LINESeedKR";
+  font-weight: light;
+  src: url("../public/font/LINESeedKR-Th.woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "LINESeedKR";
+  font-weight: normal;
+  src: url("../public/font/LINESeedKR-Rg.woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "LINESeedKR";
+  font-weight: bold;
+  src: url("../public/font/LINESeedKR-Bd.woff2");
+  font-display: swap;
+}
 
-  
-
-html,body,#root{
-    font-family: 'LINESeedKR';
-    letter-spacing: 0rem;
-    line-height: 1.25rem;
-    font-size: 0.98rem;
+html,
+body,
+#root {
+  font-family: "LINESeedKR";
+  letter-spacing: 0rem;
+  line-height: 1.25rem;
+  font-size: 0.98rem;
 }
